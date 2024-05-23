@@ -15,9 +15,15 @@ import book2 from '../assets/book2.jpg'
 import book3 from '../assets/book3.jpg'
 import book4 from '../assets/book4.jpg'
 
+
+
+
 const Slider = () => {
+
+ 
+
     return (
-        <div className='container px-6 py-12 mx-auto rounded-lg'>
+        <div className='container px-6 py-12 mx-auto'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

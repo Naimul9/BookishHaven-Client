@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 
 
+
+
 const Slide = ({ image, text, button }) => {
+
   return (
     <div
       className='w-full bg-center bg-cover h-[34rem]'
