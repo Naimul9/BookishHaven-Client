@@ -7,11 +7,11 @@ const Login = () => {
   const navigate = useNavigate()
   const { signIn, signInWithGoogle } = useContext(AuthContext)
 
-  // Google Signin
+  // Google SignIn
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      toast.success('Signin Successful')
+      toast.success('SignIn Successful')
       navigate('/')
     } catch (err) {
       console.log(err)
@@ -19,7 +19,7 @@ const Login = () => {
     }
   }
 
-  // Email Password Signin
+  // Email Password SignIn
   const handleSignIn = async e => {
     e.preventDefault()
     const form = e.target
@@ -31,7 +31,7 @@ const Login = () => {
       const result = await signIn(email, pass)
       console.log(result)
       navigate('/')
-      toast.success('Signin Successful')
+      toast.success('SignIn Successful')
     } catch (err) {
       console.log(err)
       toast.error(err?.message)
