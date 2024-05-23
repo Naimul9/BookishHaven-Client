@@ -18,6 +18,8 @@ const Registration = () => {
     const pass = form.password.value
     console.log({ email, pass, name, photo })
     try {
+
+
       //2. User Registration
       const result = await createUser(email, pass)
       console.log(result)
@@ -31,7 +33,7 @@ const Registration = () => {
     }
   }
 
-  // Google Signin
+  // Google SignIn
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
