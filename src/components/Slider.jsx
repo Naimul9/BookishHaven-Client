@@ -17,7 +17,7 @@ import book4 from '../assets/book4.jpg'
 
 const Slider = () => {
     return (
-        <div className='container px-6 py-12 mx-auto'>
+        <div className='container px-6 py-12 mx-auto rounded-lg'>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

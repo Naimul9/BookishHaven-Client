@@ -1,11 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom'
-
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { AuthContext } from '../../providers/AuthProvider'
 import toast from 'react-hot-toast'
+
 const Login = () => {
   const navigate = useNavigate()
   const { signIn, signInWithGoogle } = useContext(AuthContext)
+  const [error, setError] = useState('')
 
   // Google SignIn
   const handleGoogleSignIn = async () => {
@@ -15,26 +16,28 @@ const Login = () => {
       navigate('/')
     } catch (err) {
       console.log(err)
-      toast.error(err?.message)
+      toast.error(err?.message || 'An error occurred')
     }
   }
 
   // Email Password SignIn
-  const handleSignIn = async e => {
+  const handleSignIn = async (e) => {
     e.preventDefault()
     const form = e.target
     const email = form.email.value
     const pass = form.password.value
     console.log({ email, pass })
+
     try {
-      //User Login
+      // User Login
       const result = await signIn(email, pass)
       console.log(result)
       navigate('/')
       toast.success('SignIn Successful')
     } catch (err) {
       console.log(err)
-      toast.error(err?.message)
+      setError('Invalid email or password')
+      toast.error( 'Invalid email or password')
     }
   }
 
@@ -44,7 +47,7 @@ const Login = () => {
         <div
           className='hidden bg-cover bg-center lg:block lg:w-1/2'
           style={{
-            backgroundImage:"s",
+            backgroundImage: "url('your-image-url')",
           }}
         ></div>
 
@@ -96,6 +99,13 @@ const Login = () => {
 
             <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
           </div>
+
+          {error && (
+            <div className='mt-4 text-center text-red-500'>
+              {error}
+            </div>
+          )}
+
           <form onSubmit={handleSignIn}>
             <div className='mt-4'>
               <label
@@ -148,7 +158,7 @@ const Login = () => {
               to='/registration'
               className='text-xs text-gray-500 uppercase  hover:underline'
             >
-              or sign up
+              or Register
             </Link>
 
             <span className='w-1/5 border-b  md:w-1/4'></span>
