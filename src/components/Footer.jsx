@@ -1,13 +1,13 @@
 
 const Footer = () => {
   return (
-    <footer className='bg-white shadow-sm'>
+    <footer className='bg-lime-100 shadow-sm'>
       <hr />
       <div className='container px-6 py-8 mx-auto'>
         <div className='flex flex-col items-center text-center'>
           <div className='flex gap-2 items-center'>
-            <img className='w-auto h-7' src="" alt='' />
-            <span>Bookish Haven</span>
+            <img className='w-auto h-10' src="/Bookish-Haven.png" alt='' />
+            <span className="text-3xl font-semibold">Bookish Haven</span>
           </div>
 
           <div className='flex flex-wrap justify-center mt-6 -mx-4'>

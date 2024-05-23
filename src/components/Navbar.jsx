@@ -8,15 +8,21 @@ const Navbar = () => {
     <div className='navbar bg-base-100 shadow-sm container px-4 mx-auto'>
       <div className='flex-1'>
         <Link to='/' className='flex gap-2 items-center'>
-          <img className='w-auto h-7' src="" alt='' />
+          <img className='w-auto h-7' src="/Bookish-Haven.png" alt='' />
           <span className='font-bold'>Bookish Haven</span>
         </Link>
       </div>
+
+
       <div className='flex-none'>
-        <ul className='menu menu-horizontal px-1'>
+        <ul className='menu menu-horizontal px-1 font-medium '>
           <li>
             <Link to='/'>Home</Link>
           </li>
+          <li>
+            <Link to='/all-books'>All Books</Link>
+          </li>
+         
 
           {!user && (
             <li>
@@ -42,22 +48,17 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+              className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium'
             >
               <li>
-                <Link to='/add-job' className='justify-between'>
-                  Add Job
+                <Link to='/add-books' className='justify-between'>
+                  Add Books
                 </Link>
               </li>
               <li>
-                <Link to='/my-posted-jobs'>My Posted Jobs</Link>
+                <Link to='/borrowed-books'>Borrowed Books</Link>
               </li>
-              <li>
-                <Link to='/my-bids'>My Bids</Link>
-              </li>
-              <li>
-                <Link to='/bid-requests'>Bid Requests</Link>
-              </li>
+            
               <li className='mt-2'>
                 <button
                   onClick={logOut}
