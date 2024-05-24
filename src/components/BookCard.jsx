@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Rating from 'react-rating';
 
 const BookCard = () => {
@@ -15,7 +15,7 @@ console.log(books);
             <p>Author: {book.author}</p>
             <p>Category: {book.Category}</p>
             <Rating initialRating={book.rating} readonly />
-            <button className="mt-2 p-2 bg-blue-500 text-white rounded">Details</button>
+           <Link to={`/book-detail/${book._id}`}> <button className="mt-2 p-2 bg-blue-500 text-white rounded">Details</button></Link>
           </div>
         ))}
       </div>
