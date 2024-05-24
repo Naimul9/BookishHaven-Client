@@ -5,11 +5,11 @@ import Slider from "../components/Slider";
 
 const Home = () => {
     const books = useLoaderData()
-    console.log(books);
+    // console.log(books);
     return (
         <div>
         <Slider></Slider>
-        <BookCategories></BookCategories>
+        <BookCategories books={books}></BookCategories>
         </div>
     );
 };
