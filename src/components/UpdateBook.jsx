@@ -11,7 +11,7 @@ const UpdateBook = () => {
     name,
     image,
     authorName,
-    category,
+    Category,
     rating,
     _id
   } = book;
@@ -22,7 +22,7 @@ const UpdateBook = () => {
     const name = formData.get("name");
     const image = formData.get("image");
     const authorName = formData.get("authorName");
-    const category = formData.get("category");
+    const Category = formData.get("Category");
     const rating = formData.get("rating");
     const email = user.email;
 
@@ -30,7 +30,7 @@ const UpdateBook = () => {
       name,
       image,
       authorName,
-      category,
+      Category,
       rating,
       email,
     };
@@ -73,7 +73,27 @@ const UpdateBook = () => {
           </div>
           <div>
             <label htmlFor="category" className="block mb-2">Category</label>
-            <input type="text" defaultValue={category} id="category" name="category" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Category" />
+            <select
+                        name="Category"
+                        id="Category"
+                        className="w-full p-2 border rounded-md focus:outline-slate-400"
+                        type="text"
+                        defaultValue={Category}
+                        placeholder="Select Category"
+                    >
+                        <option value="Art and Music" selected>
+                        Art and Music
+                        </option>
+                        <option value="History" selected>
+                        History
+                        </option>
+                        <option value="Entertainment" selected>
+                        Entertainment
+                        </option>
+                        <option value="Sci-Fi and Fiction" selected>
+                        Sci-Fi and Fiction
+                        </option>
+                    </select>
 
             <label htmlFor="rating" className="block mt-4 mb-2">Rating</label>
             <input type="number" id="rating" defaultValue={rating} name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" placeholder="Rating" />

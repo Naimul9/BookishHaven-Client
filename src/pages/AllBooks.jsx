@@ -42,7 +42,7 @@ const AllBooks = () => {
                                 src={book.image} 
                                 alt={book.name} 
                             />
-                            <h2 className="mt-4 text-2xl font-semibold text-black">{book.name}</h2>
+                            <h2 className="mt-4 text-xl font-semibold text-black h-14">{book.name}</h2>
                             <p>Author: {book.authorName}</p>
                             <p>Category: {book.Category}</p>
                             <Rating 
@@ -50,7 +50,7 @@ const AllBooks = () => {
                                 readonly 
                             />
                             <Link to={`/book-update/${book._id}`}>
-                                <button className="mt-2 p-2 bg-blue-500 text-white rounded">
+                                <button className="mt-2 p-2 bg-blue-500 text-white rounded btn-block">
                                     Update
                                 </button>
                             </Link>
@@ -81,7 +81,7 @@ const AllBooks = () => {
                                     <td className="border px-4 py-2">
                                         <Link to={`/book-update/${book._id}`}>
                                             <button className="p-2 bg-blue-500 text-white rounded">
-                                                Details
+                                                Update
                                             </button>
                                         </Link>
                                     </td>

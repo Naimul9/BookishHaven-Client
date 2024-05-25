@@ -11,7 +11,7 @@ console.log(books);
         {books.map((book) => (
           <div key={book._id} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">
             <img className="object-cover w-full rounded-xl aspect-square h-96" src={book.image} alt={book.name} />
-            <h2 className="mt-4 text-2xl font-semibold text-black">{book.name}</h2>
+            <h2 className="mt-4 text-xl font-semibold text-black h-14">{book.name}</h2>
             <p>Author: {book.authorName}</p>
             <p>Category: {book.Category}</p>
             <Rating initialRating={book.rating} readonly />

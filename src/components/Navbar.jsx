@@ -50,6 +50,7 @@ const Navbar = () => {
               tabIndex={0}
               className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium'
             >
+                <li className='justify-between px-3 mt-1 mb-1'>{user.displayName}</li>
               <li>
                 <Link to='/add-books' className='justify-between'>
                   Add Books
