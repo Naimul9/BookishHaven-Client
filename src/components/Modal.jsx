@@ -1,46 +1,21 @@
 /* eslint-disable react/prop-types */
-import { useState, useContext } from "react";
+import {  useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
-const Modal = ({ onClose, onSubmit, book }) => {
+const Modal = ({ onClose,  book }) => {
     const { user } = useContext(AuthContext);
-    const [returnDate, setReturnDate] = useState("");
-    const [borrowError, setBorrowError] = useState(null);
+  
 
-    const { name, author, category, description, rating, imageUrl, quantity } = book;
+    // const {  authorName, category, description, rating, imageUrl, quantity } = book;
+    console.log(book);
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Validate return date
-        if (!returnDate) {
-            setBorrowError("Return date is required");
-            return;
-        }
+       
+      
 
-        // Prepare borrow data
-        const borrowData = {
-            name: user.displayName,
-            email: user.email,
-            returnDate,
-            author,
-            category,
-            description,
-            rating,
-            imageUrl,
-            quantity,
-        };
-
-        console.log(borrowData);
-
-        // Call parent component's onSubmit function with form data
-        onSubmit(borrowData);
-
-        // Reset form state
-        setReturnDate("");
-        setBorrowError(null);
-
-        // Close the modal
+      
         onClose();
     };
 
@@ -101,13 +76,13 @@ const Modal = ({ onClose, onSubmit, book }) => {
                                         type="date"
                                         id="returnDate"
                                         name="returnDate"
-                                        value={returnDate}
-                                        onChange={(e) => setReturnDate(e.target.value)}
+                                        value="returnDate"
+                                        
                                         className="block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                                     />
                                 </div>
 
-                                {borrowError && <p className="text-sm text-red-600">{borrowError}</p>}
+                                
 
                                 <div className="mt-4 sm:flex sm:items-center sm:-mx-2">
                                     <button

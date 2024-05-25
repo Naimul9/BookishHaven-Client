@@ -3,10 +3,11 @@ import Rating from 'react-rating';
 
 const BookCard = () => {
   const books = useLoaderData();
+
 console.log(books);
   return (
     <div className='container mx-auto py-10 px-4 '>
-      
+          
       <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
         {books.map((book) => (
           <div key={book._id} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">

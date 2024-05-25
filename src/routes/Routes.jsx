@@ -9,12 +9,14 @@ import BorrowedBooks from "../pages/BorrowedBooks";
 import BookCard from "../components/BookCard";
 import BookDetails from "../components/BookDetails";
 import UpdateBook from "../components/UpdateBook";
+import Error from "../pages/Error";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
-        // errorElement: <ErrorPage />,
+        errorElement: <Error />,
         children: [
           {
             index: true,
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/add-books',
-            element: <AddBooks />,
+            element: <PrivateRoutes><AddBooks /></PrivateRoutes>,
           },
           {
             path: '/all-books',
@@ -40,21 +42,21 @@ const router = createBrowserRouter([
           },
           {
             path: '/borrowed-books',
-            element: <BorrowedBooks />,
+            element: <PrivateRoutes><BorrowedBooks /></PrivateRoutes>,
           },
           {
             path: '/bookCard/:Category',
-            element: <BookCard />,
+            element: <PrivateRoutes><BookCard /></PrivateRoutes>,
             loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/books?Category=${params.Category}`),
           },
           {
             path: '/book-detail/:id',
-            element: <BookDetails />,
+            element: <BookDetails /> ,
             loader : () => fetch(`${import.meta.env.VITE_API_URL}/books`)
           },
           {
             path: '/book-update/:id',
-            element: <UpdateBook />,
+            element: <PrivateRoutes><UpdateBook /></PrivateRoutes> ,
             loader : ({params}) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`)
           },
         ],

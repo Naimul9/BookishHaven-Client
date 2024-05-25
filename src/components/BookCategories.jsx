@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const BookCategories = () => {
   return (
     <div>
-      <section className="bg-white container mx-auto">
+      <section className="bg-base-100 container mx-auto">
         <div className="h-[32rem]">
           <div className="container px-6 py-10 mx-auto">
             <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-black">Book Categories</h1>

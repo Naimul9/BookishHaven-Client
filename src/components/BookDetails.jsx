@@ -2,46 +2,32 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Modal from "./Modal";
+import Rating from "react-rating";
+
 
 const BookDetails = () => {
-    const { loading, setLoading, user } = useContext(AuthContext);
+    const {loading, setLoading} = useContext(AuthContext)
     const { id } = useParams(); 
-    const [book, setBook] = useState(null);
+    const [book, setBook] = useState([]);
+
+    const { name, authorName, Category, description, rating, image } = book;
+
+
+
+
     const [showModal, setShowModal] = useState(false);
 
     const handleBorrow = () => {
         setShowModal(true);
     };
 
-    const handleSubmitBorrow = async (borrowData) => {
-        try {
-            const updatedQuantity = book.quantity - 1;
-            if (updatedQuantity < 0) return; // Prevent negative quantity
+   
 
-            // Update book quantity in the backend
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/borrow`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ ...borrowData, bookId: id })
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to borrow book");
-            }
-
-            // Update book state
-            setBook({ ...book, quantity: updatedQuantity });
-        } catch (error) {
-            console.error("Error borrowing book:", error);
-        }
-    };
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                setLoading(true);
+                setLoading(true); // Set loading to true when fetching data
                 const response = await fetch(`${import.meta.env.VITE_API_URL}/books/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch item details');
@@ -51,44 +37,72 @@ const BookDetails = () => {
             } catch (error) {
                 console.error('Error fetching item details:', error);
             } finally {
-                setLoading(false);
+                setLoading(false); // Set loading to false when data fetching is complete
             }
         };
 
         fetchData(); 
     }, [id, setLoading]);
 
+
     if (loading) {
-        return <div>Loading...</div>;
+        return <div>Loading...</div>; // Render loading indicator if data is being fetched
     }
 
-    if (!book) {
-        return <div>No book found</div>;
-    }
-
-    const { name, author, category, description, rating, imageUrl, quantity } = book;
 
     return (
         <div>
-            <h2>{name}</h2>
+         {/* <h2>{name}</h2>
             <p>Author: {author}</p>
             <p>Category: {category}</p>
             <p>Description: {description}</p>
             <p>Rating: {rating}</p>
-            <img src={imageUrl} alt={name} />
-            <button onClick={handleBorrow} disabled={quantity === 0}>
+             <img src={book.imageUrl} alt={book.name} />
+            <button onClick={handleBorrow} disabled={book.quantity === 0}>
                 Borrow
-            </button>
+            </button> */}
 
+<section className="py-10 px-4 bg-white lg:py-0 container mx-auto my-20 border border-dashed border-gray-200  rounded-lg font-roboto">
+    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid items-stretch grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 xl:gap-x-24">
+            <div className="h-full pr-12 lg:order-2 lg:mb-40">
+                <div className="relative h-full lg:h-auto">
+                    <div className="absolute w-full h-full -mb-12 overflow-hidden bg-gradient-to-r from-slate-300 to-gray-200 top-12 left-12 xl:left-16 lg:top-0 lg:scale-y-105 lg:origin-top">
+                        <img className="object-cover object-right w-full h-full scale-150" src="https://cdn.rareblocks.xyz/collection/celebration/images/content/2/lines.svg" alt="" />
+                    </div>
+                    <div className="relative lg:-top-12">
+                        <img className="lg:w-[512px]  w-332px lg:h-[720px] h-[500px]" src={image} alt="" />
+                    </div>
+                </div>
+            </div>
+
+            <div className="flex items-center justify-start py-10 lg:order-1 sm:py-16 lg:py-24 xl:py-48">
+                <div>
+                    <p className="text-sm font-semibold tracking-widest text-gray-500 uppercase"> {authorName} </p>
+                    <h2 className="mt-4  text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">{name}</h2>
+                    <p className="text-xl leading-relaxed text-black mt-4"> {description} </p>
+
+                 <div className="lg:flex justify-between mt-10 text-xl ">
+                    <p> <span className="font-semibold">Category</span>   : {Category}</p>
+                   <p className="flex lg:mt-0 mt-4"> <span className="font-semibold">Rating</span> : <Rating initialRating={rating} readonly /> </p>
+                 </div>
+
+                   
+                    <button onClick={handleBorrow}  className="btn btn-block inline-flex items-center justify-center mt-12 text-base font-semibold text-white transition-all duration-200 bg-slate-400 rounded-md hover:bg-slate-600 focus:bg-gray-800" > Borrow </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+            {/* Borrow modal */}
             {showModal && (
-                <Modal
-                    onClose={() => setShowModal(false)}
-                    onSubmit={handleSubmitBorrow}
-                    book={book} // Pass the book data to the Modal
-                />
+                <Modal onClose={() => setShowModal(false)}> </Modal>
             )}
         </div>
     );
 };
-
 export default BookDetails;

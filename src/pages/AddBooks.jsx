@@ -13,7 +13,7 @@ const AddBooks = () => {
         const quantity = formData.get("quantity");
         const authorName = formData.get("authorName");
         const Category = formData.get("Category");
-        const shortDescription = formData.get("shortDescription");
+        const description = formData.get("description");
         const rating = formData.get("rating");
         const contents = formData.get("contents");
         const email = user.email;
@@ -22,7 +22,7 @@ const AddBooks = () => {
             quantity,
             authorName,
             Category,
-            shortDescription,
+            description,
             rating,
             contents,
             email}
@@ -69,13 +69,33 @@ const AddBooks = () => {
                     </div>
                     <div>
                         <label htmlFor="Category" className="block mb-2">Category</label>
-                        <input type="text" id="Category" name="category" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Category" />
+                        <select
+                        name="Category"
+                        id="Category"
+                        className="w-full p-2 border rounded-md focus:outline-slate-400"
+                        type="text"
+                       
+                        placeholder="Select Category"
+                    >
+                        <option value="Art and Music" selected>
+                        Art and Music
+                        </option>
+                        <option value="History" selected>
+                        History
+                        </option>
+                        <option value="Entertainment" selected>
+                        Entertainment
+                        </option>
+                        <option value="Sci-Fi and Fiction" selected>
+                        Sci-Fi and Fiction
+                        </option>
+                    </select>
 
                         <label htmlFor="rating" className="block mt-4 mb-2">Rating</label>
                         <input type="number" id="rating" name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" placeholder="Rating" />
 
-                        <label htmlFor="shortDescription" className="block mt-4 mb-2">Short Description</label>
-                        <textarea id="shortDescription" name="shortDescription" className="w-full p-2 py-10 border rounded-md focus:outline-slate-400" placeholder="Short Description" />
+                        <label htmlFor="description" className="block mt-4 mb-2">Description</label>
+                        <textarea id="description" name="description" className="w-full p-2 py-10 border rounded-md focus:outline-slate-400" placeholder="Description" />
 
                     </div>
                 </div>
