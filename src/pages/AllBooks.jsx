@@ -49,9 +49,9 @@ const AllBooks = () => {
                                 initialRating={book.rating} 
                                 readonly 
                             />
-                            <Link to={`/book-detail/${book._id}`}>
+                            <Link to={`/book-update/${book._id}`}>
                                 <button className="mt-2 p-2 bg-blue-500 text-white rounded">
-                                    Details
+                                    Update
                                 </button>
                             </Link>
                         </div>
@@ -79,7 +79,7 @@ const AllBooks = () => {
                                         <Rating initialRating={book.rating} readonly />
                                     </td>
                                     <td className="border px-4 py-2">
-                                        <Link to={`/book-detail/${book._id}`}>
+                                        <Link to={`/book-update/${book._id}`}>
                                             <button className="p-2 bg-blue-500 text-white rounded">
                                                 Details
                                             </button>

@@ -12,7 +12,7 @@ const AddBooks = () => {
         const image = formData.get("image");
         const quantity = formData.get("quantity");
         const authorName = formData.get("authorName");
-        const category = formData.get("category");
+        const Category = formData.get("Category");
         const shortDescription = formData.get("shortDescription");
         const rating = formData.get("rating");
         const contents = formData.get("contents");
@@ -21,7 +21,7 @@ const AddBooks = () => {
         const info ={ name,image,
             quantity,
             authorName,
-            category,
+            Category,
             shortDescription,
             rating,
             contents,
@@ -68,8 +68,8 @@ const AddBooks = () => {
                         <input type="text" id="authorName" name="authorName" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Author Name" />
                     </div>
                     <div>
-                        <label htmlFor="category" className="block mb-2">Category</label>
-                        <input type="text" id="category" name="category" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Category" />
+                        <label htmlFor="Category" className="block mb-2">Category</label>
+                        <input type="text" id="Category" name="category" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Category" />
 
                         <label htmlFor="rating" className="block mt-4 mb-2">Rating</label>
                         <input type="number" id="rating" name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" placeholder="Rating" />
