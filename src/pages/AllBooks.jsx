@@ -5,23 +5,37 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllBooks = () => {
     const books = useLoaderData();
     const [view, setView] = useState("card");
+    const [showAvailable, setShowAvailable] = useState(false);
 
     const handleViewChange = (e) => {
         setView(e.target.value);
     };
 
+    const handleFilterChange = () => {
+        setShowAvailable(!showAvailable);
+    };
+
+    // Filter books based on availability
+    const filteredBooks = showAvailable ? books.filter(book => book.quantity > 0) : books;
+
     return (
         <div className='container mx-auto py-10 px-4'>
-            <div className="flex justify-end mb-4">
+            <div className="flex justify-between mb-4">
                 <select onChange={handleViewChange} value={view} className="p-2 border rounded">
                     <option value="card">Card View</option>
                     <option value="table">Table View</option>
                 </select>
+                <button 
+                    onClick={handleFilterChange} 
+                    className={`p-2 border rounded ${showAvailable ? 'bg-green-500 text-white' : 'bg-gray-200 text-black'}`}
+                >
+                    {showAvailable ? 'Show All Books' : 'Show Available Books'}
+                </button>
             </div>
 
             {view === "card" ? (
                 <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
-                    {books.map((book) => (
+                    {filteredBooks.map((book) => (
                         <div key={book._id} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">
                             <img 
                                 className="object-cover w-full rounded-xl aspect-square h-96" 
@@ -56,7 +70,7 @@ const AllBooks = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {books.map((book) => (
+                            {filteredBooks.map((book) => (
                                 <tr key={book._id} className="text-center">
                                     <td className="border px-4 py-2">{book.name}</td>
                                     <td className="border px-4 py-2">{book.authorName}</td>
