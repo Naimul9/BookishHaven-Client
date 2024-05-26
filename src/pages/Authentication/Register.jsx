@@ -6,7 +6,7 @@ import axios from 'axios'
 
 const Registration = () => {
   const navigate = useNavigate()
-  const { signInWithGoogle, createUser, updateUserProfile, user, setUser } = useContext(AuthContext)
+  const { signInWithGoogle, createUser, updateUserProfile, setUser } = useContext(AuthContext)
 
   // Validate password
   const validatePassword = (password) => {
@@ -207,7 +207,7 @@ const Registration = () => {
         <div
           className='hidden bg-cover bg-center lg:block lg:w-1/2'
           style={{
-            backgroundImage: '',
+            backgroundImage: "url('https://i.ibb.co/8cwYtcz/pexels-eva-bronzini-8058227.jpg')",
           }}
         ></div>
       </div>

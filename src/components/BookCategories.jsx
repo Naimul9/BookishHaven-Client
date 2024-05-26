@@ -25,21 +25,25 @@ const BookCategories = () => {
             <Link to={`/bookCard/Art and Music`} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl ">
               <img className="object-cover w-full rounded-xl aspect-square h-80" src="https://i.thriftbooks.com/api/imagehandler/m/5851EEA4C5B5B905B05D1DC78E65DE7E23C18888.jpeg" alt=""/>
               <h1 className="mt-4 text-2xl font-semibold text-black">Art & Music</h1>
+              <button className="btn mt-4">Explore More</button>
             </Link>
 
             <Link to={`/bookCard/History`} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">
               <img className="object-cover w-full rounded-xl aspect-square h-80" src="https://m.media-amazon.com/images/I/51DkSVlHh4L._SL350_.jpg" alt=""/>
               <h1 className="mt-4 text-2xl font-semibold text-black">History</h1>
+              <button className="btn mt-4">Explore More</button>
             </Link>
 
             <Link to={`/bookCard/Entertainment`} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">
               <img className="object-cover w-full rounded-xl aspect-square h-80" src="https://i.thriftbooks.com/api/imagehandler/m/9F7ADEA65D62E01889D9FB69BE07CBFBAD82807F.jpeg" alt=""/>
               <h1 className="mt-4 text-2xl font-semibold text-black">Entertainment</h1>
+              <button className="btn mt-4">Explore More</button>
             </Link>
 
             <Link to={`/bookCard/Sci-Fi and Fantasy`} className="flex flex-col items-center p-4 border sm:p-6 rounded-xl">
               <img className="object-cover w-full rounded-xl aspect-square h-80" src="https://i.thriftbooks.com/api/imagehandler/m/C1027D2DBD20EA338639FA8B1BFA02E7F797C0A0.jpeg" alt=""/>
               <h1 className="mt-4 text-2xl font-semibold text-black">Sci-Fi & Fantasy</h1>
+              <button className="btn mt-4">Explore More</button>
             </Link>
           </div>
         </div>

@@ -10,7 +10,7 @@ const BookDetails = () => {
     const { id } = useParams(); 
     const [book, setBook] = useState([]);
 
-    const { name, authorName, Category, description, rating, image } = book;
+    const { name, authorName, Category, description, rating, image, quantity } = book;
 
 
 
@@ -19,6 +19,7 @@ const BookDetails = () => {
 
     const handleBorrow = () => {
         setShowModal(true);
+        
     };
 
    
@@ -52,7 +53,9 @@ const BookDetails = () => {
 
     return (
         <div>
-         {/* <h2>{name}</h2>
+
+            {/* <div>
+            <h2>{name}</h2>
             <p>Author: {author}</p>
             <p>Category: {category}</p>
             <p>Description: {description}</p>
@@ -60,8 +63,10 @@ const BookDetails = () => {
              <img src={book.imageUrl} alt={book.name} />
             <button onClick={handleBorrow} disabled={book.quantity === 0}>
                 Borrow
-            </button> */}
+            </button>
 
+            </div> */}
+        
 <section className="py-10 lg:px-0 px-4 bg-base-200 lg:py-0 container mx-auto my-20  font-roboto rounded-xl">
     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl border border-dashed border-gray-200 rounded-lg ">
         <div className="grid items-stretch grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 xl:gap-x-24">
@@ -84,11 +89,19 @@ const BookDetails = () => {
 
                  <div className="lg:flex justify-between mt-10 text-xl ">
                     <p> <span className="font-semibold">Category</span>   : {Category}</p>
-                   <p className="flex lg:mt-0 mt-4"> <span className="font-semibold">Rating</span> : <Rating initialRating={rating} readonly /> </p>
+                   <p className="flex lg:mt-0 mt-4  "> <span className="font-semibold">Rating</span> : <Rating initialRating={rating} readonly /> </p>
+                   
                  </div>
+                 <p> <span className="font-semibold lg:mt-0 mt-4 text-xl">Quantity</span>   : {quantity}</p>
 
                    
-                    <button onClick={handleBorrow}  className="btn btn-block inline-flex items-center justify-center mt-12 text-base font-semibold text-white transition-all duration-200 bg-slate-400 rounded-md hover:bg-slate-600 focus:bg-gray-800" > Borrow </button>
+                 <button 
+    onClick={handleBorrow}  
+    className="btn btn-block inline-flex items-center justify-center mt-12 text-base font-semibold text-white transition-all duration-200 bg-slate-400 rounded-md hover:bg-slate-600 focus:bg-gray-800" 
+    disabled={quantity === 0} // Add disabled attribute based on quantity
+>
+    {quantity === 0 ? "Out of Stock" : "Borrow"} {/* Change button text based on quantity */}
+</button>
                 </div>
             </div>
         </div>
@@ -100,7 +113,7 @@ const BookDetails = () => {
 
             {/* Borrow modal */}
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}> </Modal>
+                <Modal book={book} onClose={() => setShowModal(false)}  > </Modal>
             )}
         </div>
     );

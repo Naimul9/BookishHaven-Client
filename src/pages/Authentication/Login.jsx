@@ -55,7 +55,7 @@ const Login = () => {
         <div
           className='hidden bg-cover bg-center lg:block lg:w-1/2'
           style={{
-            backgroundImage: "url('your-image-url')",
+            backgroundImage: "url('https://i.ibb.co/8cwYtcz/pexels-eva-bronzini-8058227.jpg')",
           }}
         ></div>
 
