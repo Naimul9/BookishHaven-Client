@@ -86,8 +86,8 @@ const AddBooks = () => {
                         <option value="Entertainment" selected>
                         Entertainment
                         </option>
-                        <option value="Sci-Fi and Fiction" selected>
-                        Sci-Fi and Fiction
+                        <option value="Sci-Fi and Fantasy" selected>
+                        Sci-Fi and Fantasy
                         </option>
                     </select>
 

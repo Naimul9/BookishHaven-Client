@@ -1,11 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Rating from "react-rating";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const AllBooks = () => {
-    const books = useLoaderData();
+    const [books, setBooks] = useState([]);
     const [view, setView] = useState("card");
     const [showAvailable, setShowAvailable] = useState(false);
+
+    useEffect(() => {
+        const fetchBooks = async () => {
+            try {
+                const response = await axios.get(`${import.meta.env.VITE_API_URL}/books`, { withCredentials: true });
+                setBooks(response.data);
+            } catch (error) {
+                if (error.response && error.response.status === 401) {
+                    // Handle unauthorized error
+                    console.error("Unauthorized, please log in.");
+                } else {
+                    console.error("Failed to fetch books:", error);
+                }
+            }
+        };
+        fetchBooks();
+    }, []);
 
     const handleViewChange = (e) => {
         setView(e.target.value);

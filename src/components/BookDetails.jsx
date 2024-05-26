@@ -62,8 +62,8 @@ const BookDetails = () => {
                 Borrow
             </button> */}
 
-<section className="py-10 px-4 bg-white lg:py-0 container mx-auto my-20 border border-dashed border-gray-200  rounded-lg font-roboto">
-    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+<section className="py-10 lg:px-0 px-4 bg-base-200 lg:py-0 container mx-auto my-20  font-roboto rounded-xl">
+    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl border border-dashed border-gray-200 rounded-lg ">
         <div className="grid items-stretch grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 xl:gap-x-24">
             <div className="h-full pr-12 lg:order-2 lg:mb-40">
                 <div className="relative h-full lg:h-auto">

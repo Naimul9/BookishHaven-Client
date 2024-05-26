@@ -38,7 +38,7 @@ const router = createBrowserRouter([
           {
             path: '/all-books',
             element: <AllBooks />,
-            loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
+            // loader: () => fetch(`${import.meta.env.VITE_API_URL}/books`),
           },
           {
             path: '/borrowed-books',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
           {
             path: '/bookCard/:Category',
             element: <PrivateRoutes><BookCard /></PrivateRoutes>,
-            loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/books?Category=${params.Category}`),
+            loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/books/category?Category=${params.Category}`),
           },
           {
             path: '/book-detail/:id',
