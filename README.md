@@ -1,8 +1,13 @@
-# React + Vite
+# Bookish Haven
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Visit the live site: 
 
-Currently, two official plugins are available:
+## Features 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Home:** Browse a Well Categorized Library.
+- **Category:** Here you can see different kind of Catagories like Art & Music, Entertainment, History, Sci-Fi & Fantasy.
+- **Login:** Login page has Email password ,Google and Login option ,,,Once you logged in you can acces some private routes.
+- **Borrow Books:** You can Borrow books from here and U must have to give the Return Date for this.
+- **Responsive Design:** Enjoy a seamless experience across various devices, including desktops, tablets, and smartphones.
+
+
