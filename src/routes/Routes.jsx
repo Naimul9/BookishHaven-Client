@@ -51,7 +51,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/book-detail/:id',
-            element: <BookDetails /> ,
+            element: <PrivateRoutes><BookDetails /> </PrivateRoutes>,
             loader : () => fetch(`${import.meta.env.VITE_API_URL}/books`)
           },
           {
