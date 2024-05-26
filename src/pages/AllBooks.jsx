@@ -37,7 +37,7 @@ const AllBooks = () => {
     const filteredBooks = showAvailable ? books.filter(book => book.quantity > 0) : books;
 
     return (
-        <div className='container mx-auto py-10 px-4'>
+        <div className='container mx-auto py-10 px-4 font-medium'>
             <div className="flex justify-between mb-4">
                 <select onChange={handleViewChange} value={view} className="p-2 border rounded">
                     <option value="card">Card View</option>

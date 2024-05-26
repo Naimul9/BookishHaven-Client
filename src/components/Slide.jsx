@@ -19,7 +19,7 @@ const Slide = ({ image, text, button }) => {
           </h1>
           <br />
           <button
-            className='w-full px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-indigo-400 rounded-md lg:w-auto hover:bg-indigo-500 focus:outline-none focus:bg-gray-500'
+            className='w-2/4 px-5 py-4 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-indigo-400 rounded-md lg:w-auto hover:bg-indigo-500 focus:outline-none focus:bg-gray-500'
           >
             {button}
           </button>

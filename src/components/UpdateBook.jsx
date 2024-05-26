@@ -62,17 +62,17 @@ const UpdateBook = () => {
       <form onSubmit={handleUpdateBook} className="mt-10">
         <div className="grid grid-cols-2 gap-8">
           <div>
-            <label htmlFor="name" className="block mb-2">Name</label>
+            <label htmlFor="name" className="block mb-2 font-medium">Name</label>
             <input type="text" defaultValue={name} id="name" name="name" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Name" />
 
-            <label htmlFor="image" className="block mt-4 mb-2">Image</label>
+            <label htmlFor="image" className="block mt-4 mb-2 font-medium">Image</label>
             <input type="text" defaultValue={image} id="image" name="image" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Image URL" />
 
-            <label htmlFor="authorName" className="block mt-4 mb-2">Author Name</label>
+            <label htmlFor="authorName" className="block mt-4 mb-2 font-medium">Author Name</label>
             <input type="text" id="authorName" defaultValue={authorName} name="authorName" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Author Name" />
           </div>
           <div>
-            <label htmlFor="category" className="block mb-2">Category</label>
+            <label htmlFor="category" className="block mb-2 font-medium">Category</label>
             <select
                         name="Category"
                         id="Category"
@@ -95,8 +95,8 @@ const UpdateBook = () => {
                         </option>
                     </select>
 
-            <label htmlFor="rating" className="block mt-4 mb-2">Rating</label>
-            <input type="number" id="rating" defaultValue={rating} name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" placeholder="Rating" />
+            <label htmlFor="rating" className="block mt-4 mb-2 font-medium">Rating</label>
+            <input type="number" id="rating" defaultValue={rating} name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" step="0.1" placeholder="Rating" />
           </div>
         </div>
 

@@ -41,7 +41,7 @@ const Subscribe = () => {
             </div>
 
             <div className="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                <img className="w-full h-full max-w-md" src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="email illustration vector art"/>
+                <img className="w-full rounded-lg h-full max-w-md" src="https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="email illustration vector art"/>
             </div>
         </div>
     </div>

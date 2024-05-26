@@ -13,18 +13,18 @@ const AddBooks = () => {
         const quantity = formData.get("quantity");
         const authorName = formData.get("authorName");
         const Category = formData.get("Category");
-        const description = formData.get("description");
+        const shortDescription = formData.get("short-description");
         const rating = formData.get("rating");
-        const contents = formData.get("contents");
+        const detail = formData.get("detail");
         const email = user.email;
 
         const info ={ name,image,
             quantity,
             authorName,
             Category,
-            description,
+            shortDescription,
             rating,
-            contents,
+            detail,
             email}
         console.log(info);
 
@@ -64,8 +64,11 @@ const AddBooks = () => {
                         <label htmlFor="quantity" className="block mt-4 mb-2">Quantity</label>
                         <input type="number" id="quantity" name="quantity" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Quantity" />
 
-                        <label htmlFor="authorName" className="block mt-4 mb-2">Author Name</label>
-                        <input type="text" id="authorName" name="authorName" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Author Name" />
+                        
+                        <label htmlFor="short-description" className="block mt-4 mb-2">Short Description</label>
+                        <textarea id="short-description" name="short-description" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="short-description" />
+
+                       
                     </div>
                     <div>
                         <label htmlFor="Category" className="block mb-2">Category</label>
@@ -92,10 +95,14 @@ const AddBooks = () => {
                     </select>
 
                         <label htmlFor="rating" className="block mt-4 mb-2">Rating</label>
-                        <input type="number" id="rating" name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" placeholder="Rating" />
+                        <input type="number" id="rating" name="rating" className="w-full p-2 border rounded-md focus:outline-slate-400" min="1" max="5" step="0.1" placeholder="Rating" />
 
-                        <label htmlFor="description" className="block mt-4 mb-2">Description</label>
-                        <textarea id="description" name="description" className="w-full p-2 py-10 border rounded-md focus:outline-slate-400" placeholder="Description" />
+
+                        <label htmlFor="authorName" className="block mt-4 mb-2">Author Name</label>
+                        <input type="text" id="authorName" name="authorName" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Author Name" />
+
+                        <label htmlFor="detail" className="block mt-4 mb-2">More Detail</label>
+                        <textarea id="detail" name="detail" className="w-full p-2 border rounded-md focus:outline-slate-400" placeholder="Write More About The Book" />
 
                     </div>
                 </div>

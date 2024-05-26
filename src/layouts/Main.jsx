@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const Main = () => {
     return (
-        <div>
+        <div className="font-roboto">
             {/* navbar */}
 <Navbar/>
             {/* Outlet */}

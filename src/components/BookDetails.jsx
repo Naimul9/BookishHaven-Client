@@ -10,7 +10,7 @@ const BookDetails = () => {
     const { id } = useParams(); 
     const [book, setBook] = useState([]);
 
-    const { name, authorName, Category, description, rating, image, quantity } = book;
+    const { name, authorName, Category, rating, image, quantity, detail } = book;
 
 
 
@@ -47,7 +47,7 @@ const BookDetails = () => {
 
 
     if (loading) {
-        return <div>Loading...</div>; // Render loading indicator if data is being fetched
+        return <div>Loading...</div>; 
     }
 
 
@@ -70,7 +70,7 @@ const BookDetails = () => {
 <section className="py-10 lg:px-0 px-4 bg-base-200 lg:py-0 container mx-auto my-20  font-roboto rounded-xl">
     <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl border border-dashed border-gray-200 rounded-lg ">
         <div className="grid items-stretch grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12 xl:gap-x-24">
-            <div className="h-full pr-12 lg:order-2 lg:mb-40">
+            <div className="flex-1 h-full pr-12 lg:order-2 lg:mb-40">
                 <div className="relative h-full lg:h-auto">
                     <div className="absolute w-full h-full -mb-12 overflow-hidden bg-gradient-to-r from-slate-300 to-gray-200 top-12 left-12 xl:left-16 lg:top-0 lg:scale-y-105 lg:origin-top">
                         <img className="object-cover object-right w-full h-full scale-150" src="https://cdn.rareblocks.xyz/collection/celebration/images/content/2/lines.svg" alt="" />
@@ -81,11 +81,11 @@ const BookDetails = () => {
                 </div>
             </div>
 
-            <div className="flex items-center justify-start py-10 lg:order-1 sm:py-16 lg:py-24 xl:py-48">
+            <div className="flex-1 items-center justify-start py-10 lg:order-1 sm:py-16 lg:py-24 xl:py-48">
                 <div>
                     <p className="text-sm font-semibold tracking-widest text-gray-500 uppercase"> {authorName} </p>
                     <h2 className="mt-4  text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">{name}</h2>
-                    <p className="text-xl leading-relaxed text-black mt-4"> {description} </p>
+                    <p className="text-xl leading-relaxed text-black mt-4"> {detail} </p>
 
                  <div className="lg:flex justify-between mt-10 text-xl ">
                     <p> <span className="font-semibold">Category</span>   : {Category}</p>
@@ -98,9 +98,9 @@ const BookDetails = () => {
                  <button 
     onClick={handleBorrow}  
     className="btn btn-block inline-flex items-center justify-center mt-12 text-base font-semibold text-white transition-all duration-200 bg-slate-400 rounded-md hover:bg-slate-600 focus:bg-gray-800" 
-    disabled={quantity === 0} // Add disabled attribute based on quantity
+    disabled={quantity === 0} 
 >
-    {quantity === 0 ? "Out of Stock" : "Borrow"} {/* Change button text based on quantity */}
+    {quantity === 0 ? "Out of Stock" : "Borrow"} 
 </button>
                 </div>
             </div>
