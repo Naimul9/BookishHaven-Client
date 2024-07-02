@@ -1,6 +1,6 @@
 # Bookish Haven
 
-**The Art & Craft Gallery is a based on antique art and craft**
+**Bookish Haven is a virtual Library Where anyone can borrow and read the book and return it. And a user can add or update a book**
 
 ## Important Links
 
