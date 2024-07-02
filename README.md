@@ -6,9 +6,9 @@
 
 [Live-Link](https://assignment-11-def60.web.app/)
 
-[Client-Repository](https://github.com/Naimul9/Art_Craft-Client.git)
+[Client-Repository](https://github.com/Naimul9/BookishHaven-Client.git)
 
-[Server-Repository](https://github.com/Naimul9/Art_Craft-Server.git)
+[Server-Repository](https://github.com/Naimul9/BookishHaven-Server.git)
 
 ## Features 
 
